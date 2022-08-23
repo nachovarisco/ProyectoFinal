@@ -51,6 +51,9 @@
 
 const carrito = []
 
+const totalCarrito = localStorage.getItem("totalCarrito");
+document.getElementById("total-cart").innerHTML = totalCarrito
+
 const productos = [
     {id: 1,  
     name:"zapa nike" ,
@@ -100,36 +103,15 @@ productos.forEach((producto) => {
 productos.forEach((producto) => {
     const idButton = `add-cart${producto.id}`
     document.getElementById(idButton).addEventListener("click" , (event) => {
-
-//        const nodo = event.target ;
-//        const idProducto = nodo.getAttribute("data-id");
-//       const indiceProducto= productos.findIndex(producto =>producto.id == idProducto)
-//    const producto = productos [indiceProducto];
-
    carrito.push(producto);
 
-   console.log ( carrito)
-       // console.log(nodo.getattribute("data-id"))
+   const total = carrito.reduce ((acumulador , producto) => acumulador + producto.price, 0 );
+   document.getElementById("total-cart").innerHTML = `${carrito.length + Number(totalCarrito)} -$ ${total}`;
+   console.log ( carrito);
+   localStorage.setItem("totalCarrito", carrito.length);
+
+      
         
       })
 });
 
-
-
-// function agregarAlCarrito(tituloProducto){
-//     alert ("agregadoooooooo" +" "+ tituloProducto)
-// }
-
-
-// productos.forEach((producto) => {
-
-
-//     const idButton = `add-cart ${producto.id}`;
-//     document.getElementById ("cards-index").innerHTML += ` <div class="card d-flex text-center">
-//     <img src="..." class="card-img-top" alt="...">
-//     <div class="card-body">
-//       <h5 class="card-title"> ${producto.name}</h5>
-//       <p class="card-text"> ${producto.price}</p>
-//       <a href="#" class="btn btn-primary" onclick='agregarAlCarrito("${producto.name}")'  id = ${idButton}> Agregar al carrito</a>
-//     </div>
-//   </div>` 
