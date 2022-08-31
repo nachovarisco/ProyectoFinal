@@ -36,7 +36,7 @@
                   
  
                   <!-- Button trigger modal -->
-<button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"  class="btn btn-outline-dark" type="submit" onclick="generarCardsCarrito()"  >
+<button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"  class="btn btn-outline-dark" type="submit"  >
         <i class="bi-cart-fill me-1"></i>
         Cart
         <span id="total-cart" class="badge bg-dark text-white ms-1 rounded-pill"></span>                            
@@ -50,12 +50,12 @@
     <div class="modal-dialog">
       <div class="modal-content">
      
-        <div class="modal-body" id="modal-carrito">
+        <div class="modal-body" id="pollito">
         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary" > <p><a href="#carritoHTML" onclick="generarCardsCarrito()"> ver carrito</a></p></button>
+          <button type="button" class="btn btn-secondary" > <p><a href="#carritoHTML" > ver carrito</a></p></button>
         </div>
 
       </div>
@@ -76,7 +76,9 @@
         </header>
         <!-- Section--> <h3>productos</h3>
         <section class="container" id="main">   
-        <section class="container-fluid" id="cards-index" >
+            <div class ="container-fluid">
+        <section  id="cards-index" >
+        </div>
         
            
             </div>
