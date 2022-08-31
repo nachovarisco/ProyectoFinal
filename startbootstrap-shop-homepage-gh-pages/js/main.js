@@ -89,41 +89,41 @@ productos.forEach((producto) => {
     document.getElementById(idButton).addEventListener("click" , (event) => {
    carrito.push(producto);
    localStorage.setItem("carrito", JSON.stringify(carrito));
-   const total = carrito.reduce ((acumulador , producto) => acumulador + producto.price, 0 );
+   const total = carrito.reduce((acumulador , producto) => acumulador + producto.price, 0 );
    document.getElementById("total-cart").innerHTML = `${carrito.length}  -$${total}`;
-   document.getElementById("carritoLista").innerHTML = `  <div class="container">
-   <div class="row">
-     <div class="col">
-       nombre 
-     </div>
-     <div class="col">
-       precio
-     </div>
-     <div class="col">
-     imagen
-   </div>
-   </div>
-   <div class="row">
-     <div class="col">
-      ${producto.name}
-     </div>
-     <div class="col">
-     ${producto.price}
-     </div>
-     <div class="col">
-     <img src= "${producto.img}" class="card-img-top" alt="...">
-     </div>
- 
-   </div>
-   </div>
-   
-   `;
+   document.getElementById("carritoLista").innerHTML = ""
+   carrito.forEach((producto) => {
+    document.getElementById("carritoLista").innerHTML += `
+    <div class="container">
+  <div class="row">
+    <div class="col">
+      nombre 
+    </div>
+    <div class="col">
+      precio
+    </div>
+    <div class="col">
+    imagen
+  </div>
+  </div>
+  <div class="row">
+    <div class="col">
+     ${producto.name}
+    </div>
+    <div class="col">
+    ${producto.price}
+    </div>
+    <div class="col">
+    <img src= "${producto.img}" class="card-img-top" alt="...">
+    </div>
 
-   
-   
+  </div>
+  </div>
+  `;
+  })    
+  })   
   })
-})
-    
+
    
 
 
@@ -140,3 +140,4 @@ productos.forEach((producto) => {
  
 
 
+//
