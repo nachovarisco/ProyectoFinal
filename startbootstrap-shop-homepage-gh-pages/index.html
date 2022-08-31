@@ -33,13 +33,35 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span id="total-cart" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+                  
+ 
+                  <!-- Button trigger modal -->
+<button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"  class="btn btn-outline-dark" type="submit" onclick="generarCardsCarrito()"  >
+        <i class="bi-cart-fill me-1"></i>
+        Cart
+        <span id="total-cart" class="badge bg-dark text-white ms-1 rounded-pill"></span>                            
+    </button>
+</form>
+    
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+     
+        <div class="modal-body" id="modal-carrito">
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" > <p><a href="#carritoHTML" onclick="generarCardsCarrito()"> ver carrito</a></p></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+                           
                 </div>
             </div>
         </nav>
@@ -52,17 +74,37 @@
                 </div>
             </div>
         </header>
-        <!-- Section-->
-        <section class="container-fluid">
+        <!-- Section--> <h3>productos</h3>
+        <section class="container" id="main">   
         <section class="container-fluid" id="cards-index" >
+        
            
             </div>
         </section>
     </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
+    <h3> tu carrito</h3>
+    <aside> 
+<div class="container" id="aside"> 
+        <section id="carritoLista"> 
+
+
+          
+        </section></div>
+
+    </aside>
+<!-- 
+    <section id="carritoIndex">
+
+        <h3>tu carrtio</h3>
+    </section> -->
+
+
+
+
+
+   
+
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
