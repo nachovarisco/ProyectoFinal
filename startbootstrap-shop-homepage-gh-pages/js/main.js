@@ -71,6 +71,37 @@ ${producto.price}
 
 
 
+carrito.forEach((producto)=> {
+  document.getElementById("carritoLista").innerHTML += `
+<div class="container">
+<div class="row">
+<div class="col">
+  nombre 
+</div>
+<div class="col">
+  precio
+</div>
+<div class="col">
+imagen
+</div>
+</div>
+<div class="row">
+<div class="col">
+ ${producto.title}
+</div>
+<div class="col">
+${producto.price}
+</div>
+<div class="col">
+<img src= "${producto.thumbnail}" class="card-img-top" alt="...">
+</div>
+
+</div>
+</div>
+`; })
+
+
+
 
 
 // document.getElementById("carritoLista").innerHTML = ""
@@ -158,6 +189,42 @@ informacion.results.forEach((producto) => {
    </div>
    </div>
    `; })
+
+
+
+
+
+   
+   JSON.parse(localStorage.getItem("carrito"));
+   document.getElementById("carritoLista").innerHTML = ""
+   carrito.forEach((producto)=> {document.getElementById("carritoLista").innerHTML += `
+   <div class="container">
+   <div class="row">
+   <div class="col">
+     nombre 
+   </div>
+   <div class="col">
+     precio
+   </div>
+   <div class="col">
+   imagen
+   </div>
+   </div>
+   <div class="row">
+   <div class="col">
+    ${producto.title}
+   </div>
+   <div class="col">
+   ${producto.price}
+   </div>
+   <div class="col">
+   <img src= "${producto.thumbnail}" class="card-img-top" alt="...">
+   </div>
+   
+   </div>
+   </div>
+   `; })
+   
    
 
 
