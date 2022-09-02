@@ -1,5 +1,5 @@
 
-
+//API
 
   fetch('https://api.mercadolibre.com/sites/MLA/search?q=sillas')
     .then((response) => response.json())
@@ -7,9 +7,6 @@
      
       informacion.results.forEach((producto) => {
         console.log(producto)
-
-
-        
        
       const idButton = `${producto.id}`;
       console.log(idButton);
@@ -22,14 +19,7 @@
       </div>
     </div>`;
 
-
-
-
-    
       })
-
-
-
 
 
 
@@ -38,7 +28,7 @@ const total = carrito.reduce((acumulador , producto) => acumulador + producto.pr
 document.getElementById("total-cart").innerHTML = carrito.length + "$ " + total;
 
 
-//CARRITO POP UP
+//start carrito pop up
 
 carrito.forEach((producto)=> {
   document.getElementById("carritoPopUP").innerHTML += `
@@ -69,6 +59,8 @@ ${producto.price}
 </div>
 `; })
 
+
+//start carrito aside
 
 
 carrito.forEach((producto)=> {
@@ -104,41 +96,6 @@ ${producto.price}
 
 
 
-// document.getElementById("carritoLista").innerHTML = ""
-// carrito.forEach((producto) => {
-//  document.getElementById("carritoLista").innerHTML += `
-//  <div class="container">
-// <div class="row">
-//  <div class="col">
-//    nombre 
-//  </div>
-//  <div class="col">
-//    precio
-//  </div>
-//  <div class="col">
-//  imagen
-// </div>
-// </div>
-// <div class="row">
-//  <div class="col">
-//   ${producto.title}
-//  </div>
-//  <div class="col">
-//  ${producto.price}
-//  </div>
-//  <div class="col">
-//  <img src= "${producto.thumbnail}" class="card-img-top" alt="...">
-//  </div>
-
-// </div>
-// </div>
-// `;
-
-
-
-
-// })  
-
 
 
 
@@ -154,7 +111,7 @@ informacion.results.forEach((producto) => {
    document.getElementById("total-cart").innerHTML = `${carrito.length}  -$${total}`;
 
 
-
+//carrito pop up
 
 
 
@@ -191,6 +148,7 @@ informacion.results.forEach((producto) => {
    `; })
 
 
+   //carrito aside
 
 
 
@@ -224,31 +182,8 @@ informacion.results.forEach((producto) => {
    </div>
    </div>
    `; })
-   
-   
-
-
-
-    //MOSTRAR CARRITO EN BODY
-    
   })   
- 
-
- }
-  
-  
-  
-  
-  
-  )
-
-   
-
-
-
-
-
-
+ })
 })
 
 
